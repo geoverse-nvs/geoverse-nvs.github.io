@@ -81,7 +81,7 @@
         <a class="figure-image" href="assets/method.png" target="_blank" rel="noopener" aria-label="Open the GeoVerse method figure at full resolution">
           <img src="assets/method.png" width="2600" height="1255" loading="lazy" decoding="async" alt="GeoVerse pipeline: spatial memory projects target-aligned guidance, Wan2.2 VACE provides video features, and geometric latent diffusion predicts target RGB and geometry to update memory.">
         </a>
-        <figcaption>GeoVerse combines video generative priors with geometric latent diffusion and persistent spatial memory to synthesize consistent novel views in four denoising updates.</figcaption>
+        <figcaption>Context observations initialize a global spatial memory that provides target-aligned RGB-D hints. Guided by the hints and Wan2.2 VACE features injected through a ControlNet-style adapter, geometric latent diffusion synthesizes target views in four denoising updates. The decoded RGB and geometry update the memory for subsequent view expansion.</figcaption>
       </figure>
     </section>
 
