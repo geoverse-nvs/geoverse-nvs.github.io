@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="GeoVerse combines geometric latent diffusion, video generative priors, and persistent spatial memory for world-consistent novel view synthesis from sparse images.">
+  <meta name="theme-color" content="#fffefa">
+  <meta property="og:title" content="GeoVerse: World-Consistent Novel View Synthesis in Geometric Latent Space">
+  <meta property="og:description" content="From sparse images to consistent novel views with geometric latent diffusion, video priors, and persistent spatial memory.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://geoverse-nvs.github.io/">
+  <meta property="og:image" content="https://geoverse-nvs.github.io/assets/demo-poster.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>GeoVerse: World-Consistent Novel View Synthesis in Geometric Latent Space</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="masthead wrap">
+    <a class="brand" href="#top">GeoVerse<span class="brand-dot">.</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#demo">Demo</a>
+      <a href="#method">Method</a>
+      <a href="#results">Results</a>
+    </nav>
+  </header>
+  <main id="main" class="wrap">
+    <section class="hero" aria-labelledby="paper-title">
+      <h1 id="paper-title"><span class="title-brand">GeoVerse:</span> World-Consistent Novel View Synthesis in Geometric Latent Space</h1>
+      <div class="authors" aria-label="Authors"><p>Anonymous Authors</p></div>
+      <p class="tldr"><strong>TL;DR</strong> GeoVerse turns sparse images into world-consistent novel views by combining geometric latent diffusion, video generative priors, and persistent spatial memory.</p>
+    </section>
+
+    <section id="demo" class="section demo-section" aria-labelledby="demo-title">
+      <div class="section-heading"><h2 id="demo-title">Demo</h2><span class="section-index" aria-hidden="true">01</span></div>
+      <div class="video-frame">
+        <video controls playsinline preload="metadata" poster="assets/demo-poster.jpg" width="1080" height="1080" aria-label="GeoVerse novel view synthesis demonstration across indoor and outdoor scenes">
+          <source src="assets/demo.mp4" type="video/mp4">
+          Your browser does not support embedded video. <a href="assets/demo.mp4">Download the demo.</a>
+        </video>
+      </div>
+    </section>
+
+    <section id="method" class="section" aria-labelledby="method-title">
+      <div class="section-heading"><h2 id="method-title">Method</h2><a class="figure-link" href="assets/method.png" target="_blank" rel="noopener">Full resolution <span aria-hidden="true">↗</span></a></div>
+      <figure>
+        <a class="figure-image" href="assets/method.png" target="_blank" rel="noopener" aria-label="Open the GeoVerse method figure at full resolution">
+          <img src="assets/method.png" width="2600" height="1255" loading="lazy" decoding="async" alt="GeoVerse pipeline: spatial memory projects target-aligned guidance, Wan2.2 VACE provides video features, and geometric latent diffusion predicts target RGB and geometry to update memory.">
+        </a>
+        <figcaption>GeoVerse combines video generative priors with geometric latent diffusion and persistent spatial memory to synthesize consistent novel views in four denoising updates.</figcaption>
+      </figure>
+    </section>
+
+    <section id="results" class="section" aria-labelledby="results-title">
+      <div class="section-heading"><h2 id="results-title">Qualitative comparisons</h2><a class="figure-link" href="assets/qualitative.png" target="_blank" rel="noopener">Full resolution <span aria-hidden="true">↗</span></a></div>
+      <figure>
+        <a class="figure-image" href="assets/qualitative.png" target="_blank" rel="noopener" aria-label="Open the qualitative comparison figure at full resolution">
+          <img src="assets/qualitative.png" width="3000" height="2407" loading="lazy" decoding="async" alt="Comparison with ViewCrafter, NeoVerse, GEN3C, MVGenMaster, Matrix3D, CAMEO, and GLD across indoor and outdoor scenes, followed by three rounds of long-sequence view generation.">
+        </a>
+        <figcaption>Qualitative comparisons across multiple datasets show single-pass synthesis (top) and long-sequence generation over three successive rounds (bottom).</figcaption>
+      </figure>
+    </section>
+  </main>
+  <footer class="footer wrap"><span>GeoVerse</span><span class="credit">Design inspired by <a href="https://kevinxu02.github.io/real2sim-indoor-site/">AHa-3D</a>.</span><a href="#top">Back to top ↑</a></footer>
+</body>
+</html>
