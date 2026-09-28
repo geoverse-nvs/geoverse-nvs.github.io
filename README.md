@@ -2,7 +2,7 @@
 
 Project page for **GeoVerse: World-Consistent Novel View Synthesis in Geometric Latent Space**.
 
-A static, dependency-free page with a title and author block, TL;DR, demonstration video, method figure, and qualitative comparison figure. The typography and palette are inspired by [AHa-3D](https://kevinxu02.github.io/real2sim-indoor-site/); the implementation is original to this page.
+A static, dependency-free page with a title and author block, TL;DR, demonstration video, method figure, qualitative comparison figure, few-step analysis, motivation, and BibTeX citation. The typography and palette are inspired by [AHa-3D](https://kevinxu02.github.io/real2sim-indoor-site/); the implementation is original to this page.
 
 ## Edit and preview
 
@@ -19,3 +19,5 @@ A static, dependency-free page with a title and author block, TL;DR, demonstrati
 - Author order, affiliations, and corresponding-author markers follow the author-version Overleaf project `6ab9d8d84f3863fedbffdcd8`, commit `e4b8045`; names retain the source spelling, including `Hunag Mu`.
 
 No AI-generated teaser images are used.
+
+- Fig. 4 (`assets/few-step.pdf` and PNG), motivation, and citation metadata follow author-version manuscript commit `e4b8045`; speed claims refer to the paper evaluation setting.

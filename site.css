@@ -29,7 +29,7 @@ h1{font-size:clamp(36px,4.6vw,60px);line-height:1.13;letter-spacing:-.043em;text
 .tldr strong{color:var(--accent);margin-right:8px;letter-spacing:.025em}
 .section{margin-top:68px;scroll-margin-top:28px}
 .section+.section{padding-top:42px;border-top:1px solid var(--line)}
-.section-heading{display:flex;justify-content:space-between;align-items:baseline;gap:20px;margin-bottom:24px}
+.section-heading{display:flex;justify-content:center;align-items:center;gap:14px;margin-bottom:24px;flex-direction:column;text-align:center}
 h2{font-size:clamp(29px,3vw,37px);line-height:1.2;letter-spacing:-.03em;margin:0}
 .section-index{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
 .video-frame{max-width:740px;margin:0 auto;overflow:hidden;border:1px solid var(--line);border-radius:6px;background:#151915}
@@ -39,11 +39,26 @@ figure{margin:0}
 img{display:block;width:100%;height:auto}
 .figure-link{flex-shrink:0;font-size:12px;text-decoration:none}
 .figure-link:hover{text-decoration:underline}
-figcaption{font-size:14px;line-height:1.75;color:var(--muted);margin:15px 2px 0}
+figcaption{font-size:18px;line-height:1.75;color:#384039;margin:18px 2px 0}
 .footer{margin-top:76px;padding:24px 0 32px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:16px;color:var(--muted);font-size:12px}
 .footer>a{text-decoration:none}
 .credit{font-size:11px}
 @media(min-width:1600px){.wrap{width:min(1180px,calc(100% - 120px))}h1{font-size:64px;max-width:1060px}}
-@media(max-width:650px){.wrap{width:calc(100% - 36px)}.masthead{min-height:66px}nav{gap:17px;font-size:12px}.hero{padding-top:38px}h1{font-size:36px;letter-spacing:-.035em}.authors{margin:23px 0 28px;font-size:15px}.tldr{padding:16px 18px;font-size:16px}.section{margin-top:44px}.section+.section{padding-top:32px}.section-heading{margin-bottom:18px;gap:12px;flex-wrap:wrap}h2{font-size:30px}.figure-link{font-size:11px}figcaption{font-size:13px}.footer{margin-top:50px;flex-wrap:wrap}.credit{order:3;flex-basis:100%}}
+@media(max-width:650px){.wrap{width:calc(100% - 36px)}.masthead{min-height:66px}nav{gap:17px;font-size:12px}.hero{padding-top:38px}h1{font-size:36px;letter-spacing:-.035em}.authors{margin:23px 0 28px;font-size:15px}.tldr{padding:16px 18px;font-size:16px}.section{margin-top:44px}.section+.section{padding-top:32px}.section-heading{margin-bottom:18px;gap:12px;flex-wrap:wrap}h2{font-size:30px}.figure-link{font-size:11px}figcaption{font-size:16px}.footer{margin-top:50px;flex-wrap:wrap}.credit{order:3;flex-basis:100%}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 @media(max-width:650px){.author-list{grid-template-columns:repeat(2,max-content);gap:7px 24px}.affiliations{flex-direction:column;gap:3px;font-size:12px;margin-top:17px}.affiliations span{white-space:normal}}
+
+.motivation .section-heading{max-width:850px;margin-inline:auto;margin-bottom:36px}
+.needs-list{list-style:none;counter-reset:needs;max-width:940px;margin:0 auto;padding:0}
+.needs-list li{counter-increment:needs;position:relative;padding-left:45px;margin-top:30px}
+.needs-list li::before{content:counter(needs,decimal-leading-zero);position:absolute;left:0;top:1px;color:var(--accent);font-size:15px;font-weight:600}
+.needs-list h3{font-size:21px;line-height:1.4;font-weight:600;margin:0 0 9px;letter-spacing:-.02em}
+.needs-list p{margin:0;font-size:17px;line-height:1.85;color:#384039}
+.needs-list strong{font-weight:600;color:var(--ink)}
+.citation-toolbar{display:flex;align-items:center;justify-content:space-between;background:var(--surface);border:1px solid var(--line);border-bottom:0;padding:10px 18px;font-size:13px;color:var(--muted)}
+#copy-citation{font:inherit;color:var(--accent);background:var(--paper);border:1px solid #c5d0c2;border-radius:4px;padding:7px 12px;cursor:pointer}
+#copy-citation:hover{background:#e9efe6}
+#copy-citation:focus-visible,.citation-block:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.citation-block{margin:0;padding:22px;background:var(--surface);border:1px solid var(--line);font-size:14px;line-height:1.8;overflow:auto;color:#384039;white-space:pre-wrap;overflow-wrap:anywhere}
+.copy-status{min-height:1.7em;margin:8px 0 0;font-size:13px;color:var(--accent)}
+@media(max-width:650px){nav{gap:12px;font-size:11px}.needs-list li{padding-left:32px;margin-top:25px}.needs-list h3{font-size:20px}.needs-list p{font-size:16px}.citation-block{font-size:12px;padding:16px}.section-heading{text-align:center}.credit{font-size:12px}}

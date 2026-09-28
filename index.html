@@ -20,9 +20,10 @@
   <header class="masthead wrap">
     <a class="brand" href="#top">GeoVerse<span class="brand-dot">.</span></a>
     <nav aria-label="Main navigation">
-      <a href="#demo">Demo</a>
+      <a href="#motivation">Motivation</a>
       <a href="#method">Method</a>
       <a href="#results">Results</a>
+      <a href="#citation">Citation</a>
     </nav>
   </header>
   <main id="main" class="wrap">
@@ -52,14 +53,22 @@
       <p class="tldr"><strong>TL;DR</strong> GeoVerse turns sparse images into world-consistent novel views by combining geometric latent diffusion, video generative priors, and persistent spatial memory.</p>
     </section>
 
-    <section id="demo" class="section demo-section" aria-labelledby="demo-title">
-      <div class="section-heading"><h2 id="demo-title">Demo</h2><span class="section-index" aria-hidden="true">01</span></div>
+    <section id="demo" class="section demo-section" aria-label="GeoVerse demonstration">
       <div class="video-frame">
         <video controls playsinline preload="metadata" poster="assets/demo-poster.jpg" width="1080" height="1080" aria-label="GeoVerse novel view synthesis demonstration across indoor and outdoor scenes">
           <source src="assets/demo.mp4" type="video/mp4">
           Your browser does not support embedded video. <a href="assets/demo.mp4">Download the demo.</a>
         </video>
       </div>
+    </section>
+
+    <section id="motivation" class="section motivation" aria-labelledby="motivation-title">
+      <div class="section-heading"><h2 id="motivation-title">What do we need for generation in geometric latent space?</h2></div>
+      <ol class="needs-list">
+        <li><h3>Stronger generative ability</h3><p>A geometric latent space provides strong structural priors, but limited training data can restrict its ability to complete unseen regions. We inject multilevel features from <strong>Wan2.2 VACE</strong> into geometric latent diffusion through a ControlNet-style adapter and expand training from <strong>4 to 15 real and synthetic 3D datasets</strong>, enriching appearance priors and improving generalization across scenes and domains.</p></li>
+        <li><h3>Longer generation sequences</h3><p>Consistency within a single inference pass does not ensure consistency across successive generations. We maintain a <strong>global colored point-cloud memory</strong> that accumulates observed and generated content and reprojects it into requested cameras as <strong>target-aligned guidance</strong>, allowing new views to build on a shared scene representation while completing unseen regions.</p></li>
+        <li><h3>Faster generation</h3><p>High-step geometric latent diffusion can require over 100 seconds for a single inference pass. We apply <strong>reflow distillation</strong> to reduce sampling to <strong>four denoising updates</strong>: three at Level 1 and one in the Level 0 cascade. This reduces per-pass inference from over 100 seconds to <strong>under 10 seconds</strong> in our evaluation setting, while preserving visual detail.</p></li>
+      </ol>
     </section>
 
     <section id="method" class="section" aria-labelledby="method-title">
@@ -81,7 +90,30 @@
         <figcaption>Qualitative comparisons across multiple datasets show single-pass synthesis (top) and long-sequence generation over three successive rounds (bottom).</figcaption>
       </figure>
     </section>
+    <section id="few-step" class="section" aria-labelledby="few-step-title">
+      <div class="section-heading"><h2 id="few-step-title">Few-step generation</h2><a class="figure-link" href="assets/few-step.png" target="_blank" rel="noopener">Full resolution <span aria-hidden="true">↗</span></a></div>
+      <figure>
+        <a class="figure-image" href="assets/few-step.png" target="_blank" rel="noopener" aria-label="Open Figure 4 at full resolution">
+          <img src="assets/few-step.png" width="2600" height="773" loading="lazy" decoding="async" alt="Figure 4: DL3DV comparisons across Level 1 and Level 0 denoising budgets, with enlarged crops showing fine texture and object boundaries.">
+        </a>
+        <figcaption><strong>Figure 4.</strong> On DL3DV, three Level 1 updates preserve finer details than one, while one Level 0 cascade update retains detail comparable to 49 updates, supporting our four-step sampling budget.</figcaption>
+      </figure>
+    </section>
+
+    <section id="citation" class="section" aria-labelledby="citation-title">
+      <div class="section-heading"><h2 id="citation-title">Citation</h2></div>
+      <div class="citation-toolbar"><span>BibTeX</span><button type="button" id="copy-citation">Copy citation</button></div>
+      <pre class="citation-block" tabindex="0" aria-label="BibTeX citation"><code id="bibtex">@misc{ren2026geoverse,
+  title  = {GeoVerse: World-Consistent Novel View Synthesis in Geometric Latent Space},
+  author = {Ren, Kerui and Lu, Tao and Xu, Linning and Jiang, Changjian and
+            Mu, Hunag and Shen, Chunhua and Yu, Mulin and Dai, Bo},
+  year   = {2026},
+  url    = {https://geoverse-nvs.github.io/}
+}</code></pre>
+      <p id="copy-status" class="copy-status" role="status" aria-live="polite"></p>
+    </section>
   </main>
-  <footer class="footer wrap"><span>GeoVerse</span><span class="credit">Design inspired by <a href="https://kevinxu02.github.io/real2sim-indoor-site/">AHa-3D</a>.</span><a href="#top">Back to top ↑</a></footer>
+  <footer class="footer wrap"><span>GeoVerse</span><span class="credit">We thank the <a href="https://kevinxu02.github.io/real2sim-indoor-site/">AHa-3D</a> team for their website framework.</span><a href="#top">Back to top ↑</a></footer>
+  <script src="site.js" defer></script>
 </body>
 </html>
