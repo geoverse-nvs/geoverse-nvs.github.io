@@ -19,6 +19,12 @@ h1{font-size:clamp(36px,4.6vw,60px);line-height:1.13;letter-spacing:-.043em;text
 .title-brand{color:var(--accent);font-weight:600}
 .authors{text-align:center;margin:28px 0 36px;font-size:17px}
 .authors p{margin:0}
+.author-list{display:grid;grid-template-columns:repeat(4,max-content);justify-content:center;gap:8px 28px}
+.authors sup{font-size:.68em;color:var(--accent);margin-left:2px}
+.affiliations{display:flex;flex-wrap:wrap;justify-content:center;gap:3px 20px;max-width:880px;margin:20px auto 8px;color:var(--muted);font-size:13px;line-height:1.8}
+.affiliations span{white-space:nowrap}
+.affiliations sup{margin:0 4px 0 0}
+.authors .author-note{font-size:12px;color:var(--muted);margin-top:8px}
 .tldr{max-width:900px;margin:0 auto;padding:20px 25px;border-left:3px solid var(--accent);background:var(--surface);font-size:19px;line-height:1.65}
 .tldr strong{color:var(--accent);margin-right:8px;letter-spacing:.025em}
 .section{margin-top:68px;scroll-margin-top:28px}
@@ -40,3 +46,4 @@ figcaption{font-size:14px;line-height:1.75;color:var(--muted);margin:15px 2px 0}
 @media(min-width:1600px){.wrap{width:min(1180px,calc(100% - 120px))}h1{font-size:64px;max-width:1060px}}
 @media(max-width:650px){.wrap{width:calc(100% - 36px)}.masthead{min-height:66px}nav{gap:17px;font-size:12px}.hero{padding-top:38px}h1{font-size:36px;letter-spacing:-.035em}.authors{margin:23px 0 28px;font-size:15px}.tldr{padding:16px 18px;font-size:16px}.section{margin-top:44px}.section+.section{padding-top:32px}.section-heading{margin-bottom:18px;gap:12px;flex-wrap:wrap}h2{font-size:30px}.figure-link{font-size:11px}figcaption{font-size:13px}.footer{margin-top:50px;flex-wrap:wrap}.credit{order:3;flex-basis:100%}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media(max-width:650px){.author-list{grid-template-columns:repeat(2,max-content);gap:7px 24px}.affiliations{flex-direction:column;gap:3px;font-size:12px;margin-top:17px}.affiliations span{white-space:normal}}
