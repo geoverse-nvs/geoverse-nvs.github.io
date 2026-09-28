@@ -20,4 +20,7 @@ A static, dependency-free page with a title and author block, TL;DR, demonstrati
 
 No AI-generated teaser images are used.
 
+- The arXiv and GitHub button icons come from [Simple Icons](https://github.com/simple-icons/simple-icons), distributed under CC0.
+- The demo plays muted when at least 35% of the video is visible, and pauses when offscreen or the tab is hidden; native playback controls remain available.
+
 - Fig. 4 (`assets/few-step.pdf` and PNG), motivation, and citation metadata follow author-version manuscript commit `e4b8045`; speed claims refer to the paper evaluation setting.
