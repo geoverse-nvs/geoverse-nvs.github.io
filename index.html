@@ -65,9 +65,9 @@
     <section id="motivation" class="section motivation" aria-labelledby="motivation-title">
       <div class="section-heading"><h2 id="motivation-title">What do we need for generation in geometric latent space?</h2></div>
       <ol class="needs-list">
-        <li><h3>Stronger generative ability</h3><p>A geometric latent space provides strong structural priors, but limited training data can restrict its ability to complete unseen regions. We inject multilevel features from <strong>Wan2.2 VACE</strong> into geometric latent diffusion through a ControlNet-style adapter and expand training from <strong>4 to 15 real and synthetic 3D datasets</strong>, enriching appearance priors and improving generalization across scenes and domains.</p></li>
-        <li><h3>Longer generation sequences</h3><p>Consistency within a single inference pass does not ensure consistency across successive generations. We maintain a <strong>global colored point-cloud memory</strong> that accumulates observed and generated content and reprojects it into requested cameras as <strong>target-aligned guidance</strong>, allowing new views to build on a shared scene representation while completing unseen regions.</p></li>
-        <li><h3>Faster generation</h3><p>High-step geometric latent diffusion can require over 100 seconds for a single inference pass. We apply <strong>reflow distillation</strong> to reduce sampling to <strong>four denoising updates</strong>: three at Level 1 and one in the Level 0 cascade. This reduces per-pass inference from over 100 seconds to <strong>under 10 seconds</strong> in our evaluation setting, while preserving visual detail.</p></li>
+        <li><h3>Stronger generative ability</h3><p>A geometric latent space provides strong structural priors, but limited training data can restrict its ability to complete unseen regions. We inject multilevel features from <strong>Wan2.2 VACE</strong> into geometric latent diffusion through a ControlNet-style adapter and expand training from <strong>4 to 15 real and synthetic 3D datasets</strong>, enriching appearance priors and improving generalization across scenes and domains.</p><span class="need-summary">Video priors + 15 training datasets</span></li>
+        <li><h3>Longer generation sequences</h3><p>Consistency within a single inference pass does not ensure consistency across successive generations. We maintain a <strong>global colored point-cloud memory</strong> that accumulates observed and generated content and reprojects it into requested cameras as <strong>target-aligned guidance</strong>, allowing new views to build on a shared scene representation while completing unseen regions.</p><span class="need-summary">Persistent, target-aligned memory</span></li>
+        <li><h3>Faster generation</h3><p>High-step geometric latent diffusion can require over 100 seconds for a single inference pass. We apply <strong>reflow distillation</strong> to reduce sampling to <strong>four denoising updates</strong>: three at Level 1 and one in the Level 0 cascade. This reduces per-pass inference from over 100 seconds to <strong>under 10 seconds</strong> in our evaluation setting, while preserving visual detail.</p><span class="need-summary">Four denoising updates</span></li>
       </ol>
     </section>
 
@@ -96,7 +96,7 @@
         <a class="figure-image" href="assets/few-step.png" target="_blank" rel="noopener" aria-label="Open Figure 4 at full resolution">
           <img src="assets/few-step.png" width="2600" height="773" loading="lazy" decoding="async" alt="Figure 4: DL3DV comparisons across Level 1 and Level 0 denoising budgets, with enlarged crops showing fine texture and object boundaries.">
         </a>
-        <figcaption><strong>Figure 4.</strong> On DL3DV, three Level 1 updates preserve finer details than one, while one Level 0 cascade update retains detail comparable to 49 updates, supporting our four-step sampling budget.</figcaption>
+        <figcaption>Qualitative comparisons on DL3DV with different denoising budgets, showing how Level 1 generation and Level 0 cascade updates affect visual detail.</figcaption>
       </figure>
     </section>
 
